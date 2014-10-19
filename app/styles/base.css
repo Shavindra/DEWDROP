@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600,600italic,400);
+ head,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+     font-size: 14px;
+}
+
+h2  {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px;
+    border: 5px solid #CCCCCC;
+    border-width: 5px 0 1px ;
+}
+select {
+    width: 100%;
+    padding: 10px;
+}
+pre {
+    display: block;
+    clear: both;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
+section {
+
+    padding: 20px 0;
+}
+table {
+    margin: 10px;
+    width: calc(100% - 20px); 
+    border: 1px solid #EFEFEF;
+  
+}
+td, th {
+    padding: 10px;
+    margin:0;
+}
+
+tr:nth-child(odd) {
+    background: #EFEFEF;
+}
+/** I could alternatively use JS to detect mobile and add a class **/
+
+.list-sbs:after,
+.list-compare:after,
+.mob-nav:after,
+section:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.item-sb,
+.item-compare,
+.grid-3-1 {
+    float: left;
+    padding: 10px;
+    width: calc(100%/3 - 20px);
+}
+
+.item-product {
+    display: table-cell;
+}
+
+.item-product h3 {
+    font-size: 16px;
+}
+.item-product p {
+   
+}
+
+.mob-nav {
+    display: none;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+    text-align: right;
+}
+@media all and (max-width: 325px) {
+    /* 325px is set so that it works in chrome chrome min width = 320px */
+    .mob-ui .item-compare {
+        display: none;
+        width: 100%;
+    }
+    .mob-ui .nav-btn {
+        width: calc(50% - 40px);
+        padding: 10px;
+        cursor: pointer;
+        background: #CCC;
+    }
+    .mob-ui .active,
+    .mob-nav {
+        display: block;
+    }
+}
