@@ -1,0 +1,83 @@
+$icon-font-path:"../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600,600italic,400);
+ * {
+    margin: 0;
+    padding: 0;
+}
+head,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+h2 {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px;
+    border: 5px solid #CCCCCC;
+    border-width: 5px 0 1px;
+}
+select {
+    width: 100%;
+    padding: 10px;
+}
+pre {
+    display: block;
+    clear: both;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+section {
+    padding: 20px 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li,
+ul {
+    list-style: none;
+}
+.lvl-1:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.lvl-2 {
+    float: left;
+    margin: 5px;
+    height: 10px;
+    width: 10px;
+    background: #CFCFCF;
+}
+.mob-nav {
+    display: none;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+    text-align: right;
+}
+@media all and (max-width: 325px) {
+    /* 325px is set so that it works in chrome chrome min width = 320px */
+    .mob-ui .item-compare {
+        display: none;
+        width: 100%;
+    }
+    .mob-ui .nav-btn {
+        width: calc(50% - 40px);
+        padding: 10px;
+        cursor: pointer;
+        background: #CCC;
+    }
+    .mob-ui .active,
+    .mob-nav {
+        display: block;
+    }
+}
