@@ -54,6 +54,11 @@ ul {
     width: 10px;
     background: #CFCFCF;
 }
+
+.active {
+    background: #FF0000;
+
+}
 .mob-nav {
     display: none;
 }
