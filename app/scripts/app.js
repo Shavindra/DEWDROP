@@ -41,7 +41,7 @@ dewdropApp
     var nav = document.querySelector('.nav'),
         selectClass = 'active';
 
-    var delegates = function (nav) {
+    function delegates(nav) {
 
         console.log('delegate');
 
@@ -59,7 +59,35 @@ dewdropApp
 
         });
 
-    }
+    };
+
+    var vertCounter = 0,
+        oldIndex = 0,
+        nodes = nav.getElementsByClassName('lvl-1'),
+        maxVert = nodes.length - 1;
+
+    function currentIndex(nodes, currentVert) {
+        var index = [].indexOf.call(nodes, currentVert);
+        return index;
+
+    };
+
+    function scrollVert() {
+        console.log(oldIndex);
+        var currentVert = document.querySelector('.lvl-1.active');
+
+        currentVert.classList.remove('active');
+
+        addActClass(nodes, oldIndex);
+
+
+    };
+
+    function addActClass(selector, newIndex) {
+
+        selector[newIndex].classList.add('active');
+
+    };
 
     var dewdropUI = {
 
@@ -81,8 +109,7 @@ dewdropApp
             document.body.onkeydown = function (e) {
                 e = e || window.e;
                 var keycode = e.charCode || e.keyCode;
-                
-                console.log(window.navigator);
+                scrollVert();
 
                 switch (e.which) {
 
@@ -93,15 +120,27 @@ dewdropApp
                     console.log('37');
                     break;
 
-                case 38:
-                    console.log('38');
+                case 38: // Up
+                    if (oldIndex > 0) {
+                        oldIndex--;
+                        scrollVert();
+                        console.log('Up');
+                    };
+
                     break;
 
                 case 39:
-                    console.log('39');
+                    console.log('left');
+
+
                     break;
-                case 40:
-                    console.log('40');
+                case 40: // Down 
+                         maxVert = nodes.length - 1;
+                    if (oldIndex < maxVert) {
+                        oldIndex++;
+                        scrollVert();
+                        console.log('Down');
+                    };
                     break;
 
                 }
@@ -122,11 +161,11 @@ dewdropApp
             }
 
             addSelectclass(lvl1);
-            addSelectclass(lvl2);
-            addSelectclass(lvl2List);
+            // addSelectclass(lvl2);
+            // addSelectclass(lvl2List);
 
 
-            // lvl1.classList.add(selectClass);
+
 
 
         },

@@ -21,7 +21,7 @@ dewdropApp
                 // once the data is loaded
                 getPostFeed.then(function (result) {
                     var posts = result.posts;
-                    console.log(result);
+                   // console.log(result);
 
                     $scope.posts = posts;
 
